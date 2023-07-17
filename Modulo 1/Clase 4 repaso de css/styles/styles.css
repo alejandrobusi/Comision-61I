@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+}
+
+footer > h1, main > div > h1 {
+  background-color: brown;
+  color: white;
+}
+
+#imgStyle {
+  width: 35px;
+}
+
+.headerStyle {
+  /* background: linear-gradient(0deg, rgba(108,34,195,1) 0%, rgba(34,193,195,1) 43%, rgba(253,187,45,1) 100%); */
+  background-color: antiquewhite;
+  transition: background-color 0.6s ease;
+}
+
+a:active {
+  color: rgb(236, 16, 16);
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: rgb(236, 2, 2);
+}
+
+.headerStyle:hover {
+  background-color: cadetblue;
+  font-size: 20px;
+}
+
+main :nth-child(1) {
+  /* color: #B892FF; */
+  color: rgb(199, 0, 57);
+}
+
+/* ul :nth-child(3) {
+  font-size: 24px;
+} */
+
+/* sections of divs */
+
+.div1 {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}
+
+.div2 {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+}
+
+.div3 {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+}
+
+h1 {
+  margin: 15px;
+}
+
+ul, li {
+  display: inline-block;
+}

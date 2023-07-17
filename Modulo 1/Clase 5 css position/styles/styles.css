@@ -1,0 +1,93 @@
+body {
+  background-color: #efefef;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dados {
+  color: rebeccapurple;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  max-width: 736px;
+  max-height: 570px;
+  margin-bottom: 50px;
+}
+
+.numero {
+  background-color: #fff;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+}
+
+.displayNone {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.bloque {
+  width: 170px;
+  height: 170px;
+  max-width: 736px;
+  max-height: 570px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rojo {
+  background-color: red;
+}
+
+.verde {
+  background-color: green;
+}
+
+.azul {
+  background-color: blue;
+}
+
+.panel {
+  margin-bottom: 50px;
+}
+
+.relative {
+  position: relative;
+  top: -40px;
+  left: 40px;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+}
+
+.containerRelative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  left: 300px;
+  top: 100px;
+}
+

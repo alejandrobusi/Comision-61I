@@ -1,0 +1,30 @@
+main {
+  background-color: #f8f8f8;
+}
+
+.border-sc {
+  border-bottom: 4px solid yellow;
+}
+
+main > section:nth-child(2) {
+  background-color: #060606;
+}
+
+main > section:nth-child(2) h2 {
+  font-weight: bold;
+  color: white;
+  padding-top: 60px;
+  margin: 40px 20px;
+}
+
+.bgcCard {
+  background-color: #232323;
+  border-radius: 3%;
+}
+
+.icons {
+  filter: invert(100%);
+  color: #fff;
+  opacity: 0.6;
+  width: 40px;
+}

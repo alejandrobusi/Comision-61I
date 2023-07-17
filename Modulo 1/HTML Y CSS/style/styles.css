@@ -1,0 +1,60 @@
+h1 {
+  color: red;
+  text-align: center;
+}
+
+#firstArticle > h1, h2 {
+  color: blue;
+}
+
+.containerTable {
+  border: 5px solid rgba(248, 227, 0, 0.593);
+}
+
+.containerTable > table {
+  background: tomato;
+  border: 5px solid black;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: red;
+}
+
+a:active {
+  color: springgreen;
+}
+
+h1:hover {
+  font-size: 25px;
+}
+
+.div1 {
+  background: #ee4266;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+}
+
+.div2 {
+  background: rgba(27, 17, 217, 0.42);
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+
+}
+
+.div3 {
+  background: green;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+
+}

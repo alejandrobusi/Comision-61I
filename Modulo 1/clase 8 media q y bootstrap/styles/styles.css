@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.mediaQ {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  padding-bottom: 5px;
+}
+
+/* @media only screen and (max-width: 400px) {
+  div {
+    background-color: brown;
+  }
+} */
+ 
+/* @media only screen and (min-width: 400px) {
+  div {
+    background-color: rgb(79, 207, 19);
+  }
+} */
+
+@media only screen and (min-width: 360px) and (max-width: 430px) {
+  .mediaQ {
+    background-color: coral;
+  }
+}
+
+.containerCards {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
