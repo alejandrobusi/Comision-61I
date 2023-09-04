@@ -1,44 +1,67 @@
+import navbar from '../components/navbar.js';
 import { users } from './users.js';
+import { messages, getFormData } from './utils.js';
 
-const MESSAGE_PASS_REQUIREMENTS =
-  'La contraseña debe tener entre 4 y 8 dígitos e incluir al menos un dígito numérico.';
+document.addEventListener('DOMContentLoaded', navbar);
+
+const createUser = async (body) => {
+  try {
+    const resp = await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const data = await resp.json();
+    window.location.href = './login.html';
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const userRegister = (e) => {
   e.preventDefault();
+
   const messageElement = document.getElementById('message');
   messageElement.textContent = '';
   //---obtener informacion de los inputs
-  const email = document.getElementById('email').value;
-  const userName = document.getElementById('userName').value;
-  const password = document.getElementById('password').value;
-  const passwordCheck = document.getElementById('passwordCheck').value;
+
+  const formData = getFormData(e);
+
   //----validaciones regex
   const validationEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
   const validationPassword = /^(?=.*\d).{4,8}$/;
 
   //-----regex test and validations
-  const userExist = users.some((user) => user.email === email);
-  if (userExist) return alert('El usuario ya se encuentra registrado.');
-  if (!validationEmail.test(email))
-    return alert('El formato de email es incorrecto.');
-  if (password !== passwordCheck) return alert('Las contraseñas no coinciden.');
-  if (!validationPassword.test(password)) {
-    return (messageElement.textContent = MESSAGE_PASS_REQUIREMENTS);
+  const userExist = users.some((user) => user.email === formData.email);
+  if (userExist)
+    return (messageElement.textContent = messages.userAlreadyExist);
+
+  if (!validationEmail.test(formData.email))
+    return (messageElement.textContent = messages.emailFormatBad);
+
+  if (formData.password !== formData.passwordCheck)
+    return (messageElement.textContent = messages.passwordCheckbad);
+
+  if (!validationPassword.test(formData.password)) {
+    return (messageElement.textContent = messages.passwordRequirements);
   }
 
   const newUser = {
-    email,
-    userName,
-    password,
+    ...formData,
     date: new Date(),
   };
-
-  alert('Registro exitoso');
-  window.location.href = './login.html';
+  try {
+    createUser(newUser);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const formRegister = document.getElementById('registerForm');
 formRegister.addEventListener('submit', userRegister, false);
+
 /*
 //------JSON
 const test = {
@@ -79,7 +102,7 @@ console.log(testDesJson);
 //------localStorage
 
 //-----Añadir elementos al local storage
-localStorage.setItem('userName', 'AleBusi');
+localStorage.setItem('userName', testJSON);
 
 //----- obtener elemento del local storage
 console.log(localStorage.getItem('userName'));
@@ -90,6 +113,6 @@ console.log(localStorage.getItem('userName'));
 //----- eliminar un una key especifica
 
 localStorage.removeItem('userName');
-*/
 
 // console.log(JSON.parse(localStorage.getItem('userLog')).userName);
+*/
