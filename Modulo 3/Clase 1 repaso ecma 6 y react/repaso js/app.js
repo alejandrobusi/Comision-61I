@@ -55,3 +55,4 @@ fetch('https://jsonplaceholder.typicode.com/posts/5')
 
 const resultado = await obtenerPost();
 console.log(resultado);
+//--- ahora se viene react
